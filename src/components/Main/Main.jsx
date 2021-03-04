@@ -4,7 +4,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 
 import useFetchVideos from 'hooks/useFetchVideos';
 import { VideoDisplay } from 'components/VideoDisplay';
-import { VideoList } from 'components/VideoList';
+import { Controls } from 'components/Controls';
 import useStyles from './styles';
 
 const Main = () => {
@@ -19,7 +19,7 @@ const Main = () => {
       {data.length ? (
         <>
           <VideoDisplay videoRef={videoRef} loading={loading} />
-          <VideoList videos={data} loading={loading} />
+          <Controls videos={data} loading={loading} />
         </>
       ) : (
         <Grid

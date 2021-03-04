@@ -10,7 +10,7 @@ import AppContext from 'context/AppContext';
 import useGetThumbnail from 'hooks/useGetThumbnail';
 import useStyles from './styles';
 
-const Item = ({ video }) => {
+const Item = ({ video, onScrollMove }) => {
   const thumb = useGetThumbnail(video.sources[0], video.thumb);
   const classes = useStyles();
   const {
@@ -19,7 +19,10 @@ const Item = ({ video }) => {
   } = useContext(AppContext);
 
   const handleSelect = () => {
-    selectVideo(video);
+    setTimeout(() => {
+      selectVideo(video);
+    }, 100);
+    onScrollMove();
   };
 
   return (

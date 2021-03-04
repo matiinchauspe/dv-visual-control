@@ -16,8 +16,18 @@ const useGeneralState = () => {
   };
 
   const selectVideo = (payload) => {
+    const getVideoIndex = state.videos.findIndex(
+      (video) => video.id === payload.id
+    );
+    const videos = [
+      payload,
+      ...state.videos.slice(0, getVideoIndex),
+      ...state.videos.slice(getVideoIndex + 1),
+    ];
+
     setState({
       ...state,
+      videos,
       selected: payload,
       prevSelected: state.selected,
     });
