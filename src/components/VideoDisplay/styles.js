@@ -3,9 +3,10 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
   root: {
     padding: '5px',
+    height: '100%',
   },
   videoContainer: {
-    height: '59vh',
+    height: '71%',
   },
   video: {
     objectFit: 'cover',
@@ -22,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     borderBottomLeftRadius: '.25em',
     borderBottomRightRadius: '.25em',
     padding: '10px',
-    height: '25vh',
+    height: '29%',
   },
 }));
 

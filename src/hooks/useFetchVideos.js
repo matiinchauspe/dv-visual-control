@@ -1,16 +1,22 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const useFetch = (endpoint) => {
+const useFetchVideos = (endpoint) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
+  // NOTE: Error state for a future error handler
+  const [error, setError] = useState(false);
 
   useEffect(async () => {
     try {
       setLoading(true);
       const response = await axios(endpoint);
-      setData(response.data.categories[0].videos);
+      setData(
+        response.data.categories[0].videos.map((video, index) => ({
+          ...video,
+          id: `${video.title.trim()}_${index}`,
+        }))
+      );
       setLoading(false);
     } catch {
       setError(true);
@@ -25,4 +31,4 @@ const useFetch = (endpoint) => {
   };
 };
 
-export default useFetch;
+export default useFetchVideos;

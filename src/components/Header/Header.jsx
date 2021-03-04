@@ -4,6 +4,7 @@ import Switch from '@material-ui/core/Switch';
 import DarkIcon from '@material-ui/icons/Brightness2';
 import LightIcon from '@material-ui/icons/WbIncandescent';
 
+import Logo from 'images/logo.png';
 import { Title } from './Title';
 import useStyles from './styles';
 
@@ -17,8 +18,15 @@ const Header = ({ setThemeType, themeType }) => {
       justify="space-around"
       className={classes.root}
     >
-      <Grid xs={8} container item justify="space-between">
-        <Title>DV Visual Control</Title>
+      <Grid xs={8} container item alignItems="center" spacing={3}>
+        <img
+          src={Logo}
+          alt="logo"
+          width={50}
+          height={50}
+          className={classes.image}
+        />
+        <Title style={{ marginLeft: '15px' }}>DV Visual Control</Title>
       </Grid>
       <Grid xs={3} container item justify="flex-end">
         <Switch

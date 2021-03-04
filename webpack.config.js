@@ -16,6 +16,7 @@ module.exports = {
       hooks: path.resolve(__dirname, 'src/hooks/'),
       context: path.resolve(__dirname, 'src/context/'),
       utils: path.resolve(__dirname, 'src/utils/'),
+      images: path.resolve(__dirname, 'src/images/'),
     },
   },
   module: {
@@ -32,6 +33,15 @@ module.exports = {
         use: [
           {
             loader: 'html-loader',
+          },
+        ],
+      },
+      {
+        test: /\.(gif|png|jpe?g|svg)$/i,
+        use: [
+          'file-loader',
+          {
+            loader: 'image-webpack-loader',
           },
         ],
       },

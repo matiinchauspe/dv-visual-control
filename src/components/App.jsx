@@ -8,20 +8,24 @@ import { Main } from 'components/Main';
 import { Footer } from 'components/Footer';
 
 import theme from 'utils/theme';
+import useGeneralState from 'hooks/useGeneralState';
+import AppContext from 'context/AppContext';
 
-// eslint-disable-next-line arrow-body-style
 const App = () => {
   const [themeType, setThemeType] = useState('light');
-  // const theme = useTheme();
+  const generalState = useGeneralState();
+
   return (
-    <ThemeProvider theme={theme(themeType)}>
-      <CssBaseline />
-      <Grid container direction="column">
-        <Header themeType={themeType} setThemeType={setThemeType} />
-        <Main />
-        <Footer />
-      </Grid>
-    </ThemeProvider>
+    <AppContext.Provider value={generalState}>
+      <ThemeProvider theme={theme(themeType)}>
+        <CssBaseline />
+        <Grid container direction="column">
+          <Header themeType={themeType} setThemeType={setThemeType} />
+          <Main />
+          <Footer />
+        </Grid>
+      </ThemeProvider>
+    </AppContext.Provider>
   );
 };
 

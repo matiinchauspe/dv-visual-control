@@ -2,9 +2,15 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    borderBottom: `1px solid ${theme.palette.grey[300]}`,
     flexShrink: 0,
     height: '7vh',
+    backgroundColor:
+      theme.palette.type === 'dark'
+        ? theme.palette.grey.A700
+        : theme.palette.common.white,
+  },
+  image: {
+    borderRadius: '.25em',
   },
   switch: {
     width: 45,

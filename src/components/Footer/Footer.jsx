@@ -14,7 +14,12 @@ const Footer = () => {
       className={classes.root}
       alignItems="center"
     >
-      <Typography variant="body2" color="textSecondary" component="span">
+      <Typography
+        variant="body2"
+        color="textSecondary"
+        component="span"
+        className={classes.text}
+      >
         Created by: Matias Inchauspe
       </Typography>
     </Grid>
