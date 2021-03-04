@@ -31,7 +31,7 @@ const Item = ({ video, onScrollMove }) => {
         [classes.root]: true,
         [classes.over]: selected.id === video.id,
       })}
-      elevation={0}
+      elevation={selected.id === video.id ? 1 : 0}
       onClick={handleSelect}
     >
       <CardActionArea>

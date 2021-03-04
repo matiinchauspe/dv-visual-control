@@ -7,7 +7,11 @@ const useStyles = makeStyles((theme) => ({
     border: `1px solid ${theme.palette.grey[300]}`,
   },
   over: {
-    background: 'rgba(0, 0, 0, .3)',
+    background:
+      theme.palette.type === 'dark'
+        ? 'rgba(255, 255, 255, .3)'
+        : 'rgba(0, 0, 0, .3)',
+    color: theme.palette.common.white,
   },
 }));
 

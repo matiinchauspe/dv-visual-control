@@ -19,7 +19,7 @@ const Main = () => {
       {data.length ? (
         <>
           <VideoDisplay videoRef={videoRef} loading={loading} />
-          <Controls videos={data} loading={loading} />
+          <Controls videos={data} loading={loading} videoRef={videoRef} />
         </>
       ) : (
         <Grid

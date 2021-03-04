@@ -3,8 +3,9 @@ import Grid from '@material-ui/core/Grid';
 
 import useStyles from './styles';
 import { VideoList } from './VideoList';
+import { ControlButtons } from './ControlButtons';
 
-const Controls = ({ videos, loading }) => {
+const Controls = ({ videos, loading, videoRef }) => {
   const classes = useStyles();
   return (
     <Grid
@@ -15,6 +16,7 @@ const Controls = ({ videos, loading }) => {
       alignItems="center"
       className={classes.root}
     >
+      <ControlButtons videoRef={videoRef} />
       <VideoList videos={videos} loading={loading} />
     </Grid>
   );
