@@ -14,7 +14,7 @@ const useFetchVideos = (endpoint) => {
       setData(
         response.data.categories[0].videos.map((video, index) => ({
           ...video,
-          id: `${video.title.trim()}_${index}`,
+          id: `${video.title.replace(/\s/g, '')}_${index}`,
         }))
       );
       setLoading(false);

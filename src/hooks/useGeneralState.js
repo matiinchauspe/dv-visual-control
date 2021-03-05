@@ -4,7 +4,6 @@ const useGeneralState = () => {
   const [state, setState] = useState({
     videos: [],
     selected: null, // initial with the first video of the list
-    prevSelected: null,
   });
 
   const fillInitialState = ({ videos, selected }) => {
@@ -29,7 +28,6 @@ const useGeneralState = () => {
       ...state,
       videos,
       selected: payload,
-      prevSelected: state.selected,
     });
   };
 

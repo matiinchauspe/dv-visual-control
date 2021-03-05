@@ -15,7 +15,6 @@ const Main = () => {
 
   return (
     <Grid container item xs={12} className={classes.root}>
-      {/* eslint-disable-next-line no-extra-boolean-cast */}
       {data.length ? (
         <>
           <VideoDisplay videoRef={videoRef} loading={loading} />
