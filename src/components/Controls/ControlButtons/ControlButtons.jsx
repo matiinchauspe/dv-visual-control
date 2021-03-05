@@ -21,11 +21,15 @@ const ControlButtons = ({ videoRef }) => {
 
   const handleVolume = (type) => () => {
     if (type === 'up' && videoRef.current.volume <= 0.8) {
+      if (videoRef.current.muted) {
+        // eslint-disable-next-line no-param-reassign
+        videoRef.current.muted = false;
+      }
+      // eslint-disable-next-line operator-assignment
+      videoRef.current.volume = videoRef.current.volume + 0.2; // eslint-disable-line no-param-reassign
+    } else if (type === 'down' && videoRef.current.volume >= 0.2) {
       // eslint-disable-next-line no-param-reassign
-      videoRef.current.volume += 0.2;
-    } else if (videoRef.current.volume >= 0.2) {
-      // eslint-disable-next-line no-param-reassign
-      videoRef.current.volume -= 0.2;
+      videoRef.current.volume = videoRef.current.volume - 0.2; // eslint-disable-line operator-assignment
     }
   };
 
